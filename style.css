@@ -1,0 +1,505 @@
+/* Existing CSS */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(./pexels.jpeg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed; /* Optional: keeps the background fixed */
+}
+
+
+
+h1 {
+  color: #eee;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.todo-input {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid #e6b7eca1;
+  border-radius: 30px;
+  color: #eee;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.todo-input::placeholder {
+  color: #bfbfbf;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  background: #e6b7eca1;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+.empty-image {
+  margin: 5px auto 0;
+  display: block;
+}
+.empty-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: 400px; /* Set a custom width */
+  height: auto; /* Keeps the aspect ratio */
+}
+
+
+.todo {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 2px solid #e6b7eca1;
+  transition: all 0.2s ease;
+}
+
+.todo:first-child {
+  margin-top: 0;
+}
+
+.todo:last-child {
+  margin-bottom: 0;
+}
+
+.todo:hover {
+  background-color: #e6b7eca1;
+}
+
+.todo label {
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #eee;
+}
+
+.todo span {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+span::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-left: -30px;
+  border-radius: 100px;
+  border: 2px solid #e6b7eca1;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input:checked + span {
+  text-decoration: line-through;
+}
+
+.todo:hover input:checked + span::before,
+input:checked + span::before {
+  background: url(./check.svg) 50% 50% no-repeat #09bb21;
+  border-color: #09bb21;
+}
+
+.todo:hover span::before {
+  border-color: #eee;
+}
+
+.todo .delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+  font-size: 24px;
+}
+
+.todos-container {
+  height: 300px;
+  overflow: overlay;
+}
+
+.todos-container::-webkit-scrollbar-track {
+  background: rgb(247, 247, 247);
+  border-radius: 20px;
+}
+
+.todos-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.todos-container:hover::-webkit-scrollbar {
+  width: 7px;
+}
+
+.todos-container::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.filter {
+  color: #eee;
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 2px solid #e6b7eca1;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+  background-color: #e6b7eca1;
+}
+
+.delete-all {
+  display: flex;
+  color: #eee;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-all:hover {
+  border-radius: 5px;
+  background-color: #e6b7eca1;
+}
+
+/* Priority Styles */
+.priority-low {
+  background-color: rgba(70, 123, 255, 0.7); /* Blue */
+}
+
+.priority-medium {
+  background-color: rgba(60, 179, 113, 0.7); /* Green */
+}
+
+.priority-high {
+  background-color: rgba(255, 69, 58, 0.7); /* Red */
+}
+
+.todo-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.priority-buttons {
+  display: flex;
+  justify-content:center;
+  margin-top: 10px;
+}
+
+.priority-button {
+  padding: 8px 10px; /* Reduced padding */
+  font-size: 14px; /* Reduced font size */
+  color: white;
+  border: none;
+  border-radius: 4px; /* Adjusted border radius */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.priority-button.low {
+  background-color: blue; /* Low priority color */
+}
+
+.priority-button.medium {
+  background-color: green; /* Medium priority color */
+}
+
+.priority-button.high {
+  background-color: red; /* High priority color */
+}
+
+.priority-button:hover {
+  opacity: 0.8; /* Slight hover effect */
+}
+
+/* New Due Date Input Styles */
+.due-date-input {
+  outline: none;
+  padding: 10px;
+  border: 2px solid #e6b7eca1;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #eee;
+  font-size: 16px;
+  margin-left: 10px; /* Adjusts spacing between the input and due date picker */
+}
+
+.due-date-input::placeholder {
+  color: #bfbfbf;
+}
+
+/*------------------------*/
+.priority-button.active {
+  border: 2px solid white;
+}
+
+.priority-button {
+  opacity: 0.7;
+}
+
+.priority-button:hover {
+  opacity: 1;
+}
+
+/* Add some minimum width to the due date input to prevent collapsing */
+.due-date-input {
+  min-width: 150px;
+}
+
+
+.category-select {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid #f0eef1a1;
+  border-radius: 30px;
+  color: #f4eded;
+  font-size: 16px;
+}
+ 
+/* Analytics Dashboard */
+.analytics-dashboard {
+  margin-top: 30px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); /* Adjust the alpha value for transparency */
+  border-radius: 20px;
+  color: #eee;
+  text-align: center;
+}
+
+.analytics-dashboard h2 {
+  margin-bottom: 20px;
+  color: #eee;
+}
+
+.analytics-dashboard div {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.analytics-dashboard span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #00e676;
+}
+
+.note-input
+{
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Centered note section */
+.note-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.note-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #eee8e8;
+  border-radius: 4px;
+}
+
+/* Transition for todo items */
+.todo {
+  transition: all 0.3s ease; /* Smooth transition for changes */
+  opacity: 1; /* Default opacity */
+}
+
+.todo.removing {
+  opacity: 0; /* Fade out effect when removing */
+  transform: translateY(-10px); /* Slightly move up while fading out */
+}
+
+/* Transition for checkbox completion */
+.todo.completed {
+  text-decoration: line-through; /* Strike-through completed tasks */
+  background-color: #e0ffe0; /* Light green background for completed */
+  transition: background-color 0.3s ease; /* Transition for background color */
+}
+/*----------------*/
+.timeline {
+  background: #ffffff;
+  padding: 15px;
+  margin: 20px 0;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+}
+
+.timeline h2 {
+  margin: 0 0 10px;
+}
+
+.timeline ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-item {
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #e7f3fe;
+  border-left: 5px solid #2196F3;
+}
+
+/*---------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex; /* Use flexbox for layout */
+  width: 100%;
+}
+
+.left-panel {
+  flex: 1; /* This panel takes up more space on the left */
+  padding: 20px;
+  border-right: 1px solid #ccc; /* Optional border for separation */
+}
+
+.todo-panel {
+  flex: 2; /* This panel takes up more space for the TODO app */
+  padding: 20px;
+  border-right: 1px solid #ccc; /* Optional border for separation */
+}
+
+.right-panel {
+  width: 300px; /* Fixed width for analytics panel */
+  padding: 20px;
+}
+
+.progress-timeline, .analytics-dashboard {
+  background: rgba(152, 122, 122, 0.2); /* Adjust the alpha value for transparency */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px; /* Space below each section */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+h2 {
+  margin-top: 0; /* Remove margin for consistency */
+}
+
+.timeline {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+  margin: 10px 0; /* Space above and below the list */
+}
+
+.clear-timeline-button {
+  margin-bottom: 10px; /* Space below the button */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.analytics-dashboard {
+  margin-top: 20px; /* Space above the analytics section */
+}
+
+.priority-buttons, .filters {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.priority-button, .filter, .delete-all {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.todos-container {
+  margin-top: 20px; /* Space above the todos section */
+}
+
+.empty-image {
+  display: none; /* Hide the empty image initially */
+}
+
+/* Progress Timeline Heading */
+.progress-timeline h2 {
+  color: white; /* Change this to white */
+}
+
+/* Progress Timeline */
+.progress-timeline {
+  background: rgba(152, 122, 122, 0.2); /* Adjust the alpha value for transparency */
+  border: 1px solid #ccc; /* Border for visual separation */
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px; /* Space below each section */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/*--------login css---------*/
+/* Style for the Logout Button */
+/* Style for the Logout Button */
+#logoutButton {
+    background-color: transparent; /* Transparent background */
+    color: #f44336; /* Red text color */
+    padding: 5px 10px; /* Padding for the button */
+    border: 1px solid #f44336; /* Red border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to pointer */
+    font-size: 14px; /* Font size */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block; /* Inline-block for better sizing */
+}
+
+/* Hover effect for the button */
+#logoutButton:hover {
+    background-color: #f44336; /* Red background on hover */
+    color: white; /* White text color on hover */
+}
+
