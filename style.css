@@ -485,17 +485,19 @@ h2 {
 /* Style for the Logout Button */
 /* Style for the Logout Button */
 #logoutButton {
-    background-color: transparent; /* Transparent background */
-    color: #f44336; /* Red text color */
-    padding: 5px 10px; /* Padding for the button */
-    border: 1px solid #f44336; /* Red border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Cursor changes to pointer */
-    font-size: 14px; /* Font size */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
-    margin-top: 20px; /* Space above the button */
-    display: inline-block; /* Inline-block for better sizing */
+  background-color: transparent; /* Transparent background */
+  color: #f44336; /* Red text color */
+  padding: 2px 6px; /* Reduced padding for a smaller button */
+  border: 1px solid #f44336; /* Red border */
+  border-radius: 1px; /* Slightly reduced corner rounding */
+  cursor: pointer; /* Pointer cursor */
+  font-size: 10px; /* Smaller font size */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  margin-top: 10px; /* Reduced space above the button */
+  display: inline-block; /* Inline-block to control size better */
 }
+
+
 
 /* Hover effect for the button */
 #logoutButton:hover {
