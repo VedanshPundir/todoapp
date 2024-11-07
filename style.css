@@ -196,6 +196,8 @@ input:checked + span::before {
   padding: 7px 15px;
   cursor: pointer;
   transition: all 0.2s ease;
+  border-radius: 100px;
+  border: 2px solid #e6b7eca1;
 }
 
 .delete-all:hover {
