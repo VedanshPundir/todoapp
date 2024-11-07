@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url(./do.jpeg) no-repeat center;
+  background: url(./change.jpeg) no-repeat center;
   background-size: cover;
   background-attachment: fixed; /* Optional: keeps the background fixed */
 }
