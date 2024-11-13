@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-image: url('change.jpeg'); /* Add your background image here */
+    background-image: url('pexels.jpeg'); /* Add your background image here */
     background-size: cover;
     background-position: center;
     margin: 0;
@@ -15,7 +15,7 @@ body {
 }
 
 .login-container {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     padding: 30px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -64,3 +64,4 @@ input[type="checkbox"] {
 .login-button:hover {
     background: #4cae4c;
 }
+
