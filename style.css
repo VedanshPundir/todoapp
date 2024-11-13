@@ -197,7 +197,7 @@ input:checked + span::before {
   cursor: pointer;
   transition: all 0.2s ease;
   border-radius: 100px;
-  border: 2px solid #e6b7eca1;
+  border: 2px solid #f17f21a1;
 }
 
 .delete-all:hover {
@@ -416,7 +416,7 @@ input:checked + span::before {
   padding: 20px;
   border-right: 1px solid #ccc; /* Optional border for separation */
   opacity: 0.9; /* Adjust the value between 0 and 1 (0 is fully transparent, 1 is fully opaque) */
-    background-color: rgba(255, 255, 255, 0.1); 
+    background-color: rgba(255, 255, 255, 0.25); 
 }
 
 .right-panel {
