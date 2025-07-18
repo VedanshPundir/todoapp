@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     errorMessage.textContent = '';
 
     // Check for the hardcoded username and password
-    if (username === 'Vedansh Pundir' && password === 'Vedansh@1234') {
+    if (username === 'admin' && password === '123') {
         localStorage.setItem('loggedIn', 'true'); // Set login status in local storage
         window.location.href = 'todo.html'; // Redirect to the todo page
     } else {
